@@ -1,0 +1,99 @@
+/*GLOBAL*/
+*{
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    font-size: 62.5%;
+    --font_padrao:'arial';
+    --color_h1:#34355B;
+    --color_p:#34355bcc;
+    --color_botao:#7879F1;
+}
+/*container*/
+body{
+    background: linear-gradient(287.56deg, #C2E9FB 0%, #A1C4FD 100%);
+    width: 100%;
+    height: 78vh;
+}
+main{
+    width: min(450px , 90%);
+    margin: 200px auto;
+}
+/*Primeira tela*/
+.item1{
+    max-width: 100%;
+    height: 280px;
+    background-color: white;
+    padding: 5.0rem;
+    border-radius: 5px;
+    text-align: center;
+}
+h1{
+    font: bold 2.9rem var(--font_padrao);
+    color: var(--color_h1);
+    margin-bottom: 2.0rem;
+}
+label{
+    font: normal 1.6rem var(--font_padrao);
+    color: var(--color_p);
+}
+#form1{
+    display: flex;
+    max-width: 100%;
+    height: 60px;
+    justify-content: center;
+
+    margin-top: 5.0rem;
+}
+#form1 > input{
+    width: 50px;
+    height: 60px;
+    padding: 1.6rem;
+    background-color: #DCE2E9;
+    border-radius: 4px 0 0 4px;
+}
+#form1 > button{
+    width: 100px;
+    height: 60px;
+    padding: 1.6rem;
+    background-color: var(--color_botao);
+    border-radius: 0 4px 4px 0;
+
+    font: normal 1.5rem var(--font_padrao);
+    color: white;
+}
+/*Segunda tela*/
+.item2{
+    max-width: 100%;
+    height: 230px;
+    padding: 5.0rem;
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+.item2>h1{
+    margin-bottom: 3.0rem;
+}
+.item2>button{
+    width: 170px;
+    height: 60px;
+    padding: 1.6rem;
+    background-color: var(--color_botao);
+    border-radius: 4px;
+
+    font: normal 1.5rem var(--font_padrao);
+    color: white;
+}
+button:hover{
+    background-color: #5d5dc2;
+    transition: 10ms;
+}
+.sumir{
+    display: none;
+}
+/*a logica e esconder e mostrar a outra com o comando
+display: none;*/
+

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Jogo do acerto</title>
+</head>
+<body>
+    <main>
+        <div class="item1">
+            <h1 id="h1jogo">Jogo da Adivinhação</h1>
+            <label>Adivinhe o número entre 0 e 10</label>
+            <div id="form1">
+                <input type="text" id="escolhaNumero">
+                <button onclick="verificar()">Enviar</button>
+            </div>
+        </div>
+<!--======================================-->
+        <div class="item2 sumir">
+            <h1 id="h1acerto"></h1>
+            <button>Jogar novamente</button>
+        </div>
+    </main>
+<!--======================================-->
+    <script>
+        const pag1 = document.getElementsByClassName('item1')[0];
+        const pag2 = document.getElementsByClassName('item2')[0];
+        let numberMaquina = Math.round(Math.random()*10);
+        let textoPrincipalPag1 = document.getElementById('h1jogo')
+        let textoPrincipalPag2 = document.getElementById('h1acerto')
+        let botao1 = document.getElementsByTagName('button')[0]
+        let botao2 = document.getElementsByTagName('button')[1]
+        let x = 1
+        //verificar
+        function verificar(){
+            let numberUsuario = document.getElementById('escolhaNumero').value;
+            if (Number(numberUsuario) == Number(numberMaquina)){
+                trocarDisplay()
+                textoPrincipalPag2.innerText = `Acertou em ${x} Tentativas!`
+                //reset partida
+                numberMaquina = Math.round(Math.random()*10);
+                x = 1
+            }else{  
+                textoPrincipalPag1.innerText = 'Errou: Tente novamente'
+                ++x
+            }
+        }
+        //evento para a troca
+        botao2.addEventListener('click',trocarDisplay)
+        //animação de hover no botão 1
+        botao1.addEventListener('mouseover',function(){
+            botao1.style.backgroundColor = '#5d5dc2'
+            botao1.style.transition = '3ms'
+            botao1.addEventListener('mouseout',function(){
+                botao1.style.backgroundColor = '#7879F1'
+                botao1.style.transition = '3ms'
+            })
+        })
+        //função de troca pag
+        function trocarDisplay(){
+            pag1.classList.toggle('sumir')
+            pag2.classList.toggle('sumir')
+        }
+    </script>
+</body>
+</html>
